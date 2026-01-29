@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-osint-dark: #0f172a;
-  --color-osint-card: #1e293b;
+  --color-osint-dark: #f8fafc;
+  --color-osint-card: #ffffff;
   --color-osint-accent: #0ea5e9;
   --color-osint-secondary: #10b981;
-  --color-osint-text: #f8fafc;
-  --color-osint-muted: #94a3b8;
+  --color-osint-text: #0f172a;
+  --color-osint-muted: #64748b;
 
   --font-mono: "Fira Code", monospace;
   --font-sans: "Inter", sans-serif;
