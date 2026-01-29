@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Search, Filter, X, AlertCircle } from 'lucide-react';
+import { Search, Filter, X, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import api from '../api';
 import ToolCard from '../components/ToolCard';
 import AuthContext from '../context/AuthContext';
@@ -15,6 +15,12 @@ const Tools = () => {
     const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedPlatform, setSelectedPlatform] = useState('');
     const [selectedLicense, setSelectedLicense] = useState('');
+
+    const [openSections, setOpenSections] = useState({
+        category: false,
+        platform: false,
+        license: false
+    });
 
     const categories = ['People OSINT', 'Domain OSINT', 'Social Media', 'Image Analysis', 'Maritime OSINT', 'Aviation OSINT', 'Vehicle OSINT', 'Radar OSINT', 'Geospatial', 'Dark Web', 'Relationship Analysis', 'IoT Search Engine', 'Data Leaks'];
     const platforms = ['Windows', 'Linux', 'macOS', 'Web'];
@@ -115,60 +121,84 @@ const Tools = () => {
                             </div>
 
                             {/* Category Filter */}
-                            <div className="mb-6">
-                                <h4 className="text-sm font-medium text-gray-400 mb-2 uppercase tracking-wide">Category</h4>
-                                <div className="space-y-2">
-                                    {categories.map(cat => (
-                                        <label key={cat} className="flex items-center space-x-2 cursor-pointer group">
-                                            <input
-                                                type="radio"
-                                                name="category"
-                                                checked={selectedCategory === cat}
-                                                onChange={() => setSelectedCategory(cat)}
-                                                className="form-radio text-osint-accent focus:ring-osint-accent bg-gray-900 border-gray-700"
-                                            />
-                                            <span className={`text-sm ${selectedCategory === cat ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'}`}>{cat}</span>
-                                        </label>
-                                    ))}
-                                </div>
+                            <div className="mb-6 border-b border-gray-800 pb-4">
+                                <button
+                                    onClick={() => setOpenSections(prev => ({ ...prev, category: !prev.category }))}
+                                    className="flex items-center justify-between w-full text-sm font-medium text-gray-400 uppercase tracking-wide hover:text-white transition-colors"
+                                >
+                                    Category
+                                    {openSections.category ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                                </button>
+                                {openSections.category && (
+                                    <div className="space-y-2 mt-4 animate-fadeIn">
+                                        {categories.map(cat => (
+                                            <label key={cat} className="flex items-center space-x-2 cursor-pointer group">
+                                                <input
+                                                    type="radio"
+                                                    name="category"
+                                                    checked={selectedCategory === cat}
+                                                    onChange={() => setSelectedCategory(cat)}
+                                                    className="form-radio text-osint-accent focus:ring-osint-accent bg-gray-900 border-gray-700"
+                                                />
+                                                <span className={`text-sm ${selectedCategory === cat ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'}`}>{cat}</span>
+                                            </label>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
 
                             {/* Platform Filter */}
-                            <div className="mb-6">
-                                <h4 className="text-sm font-medium text-gray-400 mb-2 uppercase tracking-wide">Platform</h4>
-                                <div className="space-y-2">
-                                    {platforms.map(plat => (
-                                        <label key={plat} className="flex items-center space-x-2 cursor-pointer group">
-                                            <input
-                                                type="radio"
-                                                name="platform"
-                                                checked={selectedPlatform === plat}
-                                                onChange={() => setSelectedPlatform(plat)}
-                                                className="form-radio text-osint-accent focus:ring-osint-accent bg-gray-900 border-gray-700"
-                                            />
-                                            <span className={`text-sm ${selectedPlatform === plat ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'}`}>{plat}</span>
-                                        </label>
-                                    ))}
-                                </div>
+                            <div className="mb-6 border-b border-gray-800 pb-4">
+                                <button
+                                    onClick={() => setOpenSections(prev => ({ ...prev, platform: !prev.platform }))}
+                                    className="flex items-center justify-between w-full text-sm font-medium text-gray-400 uppercase tracking-wide hover:text-white transition-colors"
+                                >
+                                    Platform
+                                    {openSections.platform ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                                </button>
+                                {openSections.platform && (
+                                    <div className="space-y-2 mt-4 animate-fadeIn">
+                                        {platforms.map(plat => (
+                                            <label key={plat} className="flex items-center space-x-2 cursor-pointer group">
+                                                <input
+                                                    type="radio"
+                                                    name="platform"
+                                                    checked={selectedPlatform === plat}
+                                                    onChange={() => setSelectedPlatform(plat)}
+                                                    className="form-radio text-osint-accent focus:ring-osint-accent bg-gray-900 border-gray-700"
+                                                />
+                                                <span className={`text-sm ${selectedPlatform === plat ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'}`}>{plat}</span>
+                                            </label>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
 
                             {/* License Filter */}
                             <div>
-                                <h4 className="text-sm font-medium text-gray-400 mb-2 uppercase tracking-wide">License</h4>
-                                <div className="space-y-2">
-                                    {licenses.map(lic => (
-                                        <label key={lic} className="flex items-center space-x-2 cursor-pointer group">
-                                            <input
-                                                type="radio"
-                                                name="license"
-                                                checked={selectedLicense === lic}
-                                                onChange={() => setSelectedLicense(lic)}
-                                                className="form-radio text-osint-accent focus:ring-osint-accent bg-gray-900 border-gray-700"
-                                            />
-                                            <span className={`text-sm ${selectedLicense === lic ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'}`}>{lic}</span>
-                                        </label>
-                                    ))}
-                                </div>
+                                <button
+                                    onClick={() => setOpenSections(prev => ({ ...prev, license: !prev.license }))}
+                                    className="flex items-center justify-between w-full text-sm font-medium text-gray-400 uppercase tracking-wide hover:text-white transition-colors"
+                                >
+                                    License
+                                    {openSections.license ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                                </button>
+                                {openSections.license && (
+                                    <div className="space-y-2 mt-4 animate-fadeIn">
+                                        {licenses.map(lic => (
+                                            <label key={lic} className="flex items-center space-x-2 cursor-pointer group">
+                                                <input
+                                                    type="radio"
+                                                    name="license"
+                                                    checked={selectedLicense === lic}
+                                                    onChange={() => setSelectedLicense(lic)}
+                                                    className="form-radio text-osint-accent focus:ring-osint-accent bg-gray-900 border-gray-700"
+                                                />
+                                                <span className={`text-sm ${selectedLicense === lic ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'}`}>{lic}</span>
+                                            </label>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </aside>
