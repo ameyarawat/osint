@@ -153,7 +153,7 @@ const Home = () => {
                             { name: 'Dark Web', icon: Lock, color: 'text-red-400' },
                             { name: 'Social Media', icon: Database, color: 'text-green-400' },
                         ].map((cat) => (
-                            <Link key={cat.name} to={`/tools?category=${encodeURIComponent(cat.name)}`} className="bg-osint-card/20 backdrop-blur-sm p-6 rounded-xl hover:bg-osint-card/40 transition-all text-center group">
+                            <Link key={cat.name} to={`/tools?category=${encodeURIComponent(cat.name)}`} className="bg-osint-card/90 backdrop-blur-md p-6 rounded-3xl border border-white/5 hover:border-osint-accent/50 hover:bg-osint-card transition-all text-center group shadow-lg">
                                 <cat.icon className={`h-10 w-10 mx-auto mb-4 ${cat.color} group-hover:scale-110 transition-transform`} />
                                 <h3 className="font-semibold text-white">{cat.name}</h3>
                             </Link>
