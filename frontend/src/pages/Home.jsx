@@ -109,7 +109,7 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="bg-osint-card/30 backdrop-blur-sm rounded-2xl p-8 relative overflow-hidden group hover:bg-osint-card/50 transition-colors">
+                        <div className="bg-osint-card/60 backdrop-blur-xl border border-white/10 rounded-2xl p-8 relative overflow-hidden shadow-2xl group hover:border-osint-accent/50 transition-all">
                             <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-osint-accent/5 rounded-full blur-3xl group-hover:bg-osint-accent/10 transition-colors"></div>
                             <h3 className="text-2xl font-bold text-white mb-6">The Intelligence Cycle</h3>
                             <ul className="space-y-6 relative z-10">
