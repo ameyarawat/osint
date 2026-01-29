@@ -34,7 +34,7 @@ const Categories = () => {
                             to={`/tools?category=${encodeURIComponent(cat.name)}`}
                             className="bg-osint-card p-8 rounded-xl border border-gray-800 hover:border-osint-accent hover:bg-gray-800 transition-all group flex flex-col items-center text-center"
                         >
-                            <div className={`p-4 rounded-full bg-gray-900/50 mb-6 group-hover:scale-110 transition-transform`}>
+                            <div className={`p-4 rounded-full bg-gray-900/50 mb-6 group-hover:scale-125 transition-transform duration-300`}>
                                 <cat.icon className={`h-10 w-10 ${cat.color}`} />
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">{cat.name}</h3>
