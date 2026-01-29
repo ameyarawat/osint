@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-osint-dark: #020617;
-  --color-osint-card: #0f172a;
-  --color-osint-accent: #38bdf8;
-  --color-osint-secondary: #34d399;
-  --color-osint-text: #f8fafc;
+  --color-osint-dark: #030014;
+  --color-osint-card: #0f0b29;
+  --color-osint-accent: #a855f7;
+  --color-osint-secondary: #ec4899;
+  --color-osint-text: #e2e8f0;
   --color-osint-muted: #94a3b8;
 
   --font-mono: "Fira Code", monospace;
@@ -14,6 +14,9 @@
 
 body {
   @apply bg-osint-dark text-osint-text font-sans antialiased;
+  background-image: radial-gradient(circle at 50% 0%, #2e1065, #030014);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 /* Custom Scrollbar */
