@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-osint-dark: #0f172a;
+  --color-osint-card: #1e293b;
+  --color-osint-accent: #0ea5e9;
+  --color-osint-secondary: #10b981;
+  --color-osint-text: #f8fafc;
+  --color-osint-muted: #94a3b8;
+
+  --font-mono: "Fira Code", monospace;
+  --font-sans: "Inter", sans-serif;
+}
+
+body {
+  @apply bg-osint-dark text-osint-text font-sans antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-osint-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-osint-card rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-osint-accent;
+}
