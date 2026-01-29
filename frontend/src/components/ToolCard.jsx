@@ -7,7 +7,7 @@ const ToolCard = ({ tool }) => {
     return (
         <div
             onClick={() => navigate(`/tools/${tool._id}`)}
-            className="bg-osint-card rounded-lg overflow-hidden border border-gray-800 hover:border-osint-accent transition-all duration-300 shadow-lg hover:shadow-osint-accent/10 flex flex-col h-full cursor-pointer transform hover:scale-95"
+            className="bg-osint-card rounded-lg overflow-hidden border border-gray-800 hover:border-osint-accent transition-all duration-300 shadow-lg hover:shadow-osint-accent/10 flex flex-col h-full cursor-pointer transform hover:scale-105"
         >
             <div className="p-6 flex-grow">
                 <div className="flex justify-between items-start mb-4">
