@@ -34,9 +34,6 @@ npm install
 npm run data:import  # Seed database with sample tools & admin
 npm run server       # Start backend on port 5000
 ```
-*Default Admin Credentials:*
-- Email: `admin@example.com`
-- Password: `adminpassword123`
 
 ### 2. Frontend Setup
 ```bash
