@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-osint-dark: #0f172a;
-  --color-osint-card: #1e293b;
-  --color-osint-accent: #0ea5e9;
-  --color-osint-secondary: #10b981;
+  --color-osint-dark: #020617;
+  --color-osint-card: #0f172a;
+  --color-osint-accent: #38bdf8;
+  --color-osint-secondary: #34d399;
   --color-osint-text: #f8fafc;
   --color-osint-muted: #94a3b8;
 
