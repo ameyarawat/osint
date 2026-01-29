@@ -61,10 +61,11 @@ NODE_ENV=development
 - [System Architecture](docs/ARCHITECTURE.md)
 
 ## 🚀 Deployment
+**Live Demo:** [Frontend App](https://osint-frontend.vercel.app) | [Backend API](https://osint-backend.onrender.com)
 
-- **Frontend**: Deploy `frontend/dist` to Netlify, Vercel, or GitHub Pages.
-- **Backend**: Deploy to Render, Railway, or Heroku.
-- **Database**: Use MongoDB Atlas.
+- **Frontend Host**: Vercel
+- **Backend Host**: Render
+- **Database**: MongoDB Atlas
 
 ## ⚖️ Legal Disclaimer
 This tool is for educational purposes only. The creators are not responsible for misuse.
