@@ -47,7 +47,7 @@ const NetworkBackground = () => {
             }
 
             draw() {
-                ctx.fillStyle = 'rgba(0, 220, 130, 0.3)'; // Matrix Greenish
+                ctx.fillStyle = 'rgba(0, 220, 130, 0.5)'; // Brighter dots
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
@@ -56,7 +56,7 @@ const NetworkBackground = () => {
 
         const initParticles = () => {
             particles = [];
-            const particleCount = Math.min(window.innerWidth * 0.08, 100); // Responsive count
+            const particleCount = Math.min(window.innerWidth * 0.1, 150); // More particles
             for (let i = 0; i < particleCount; i++) {
                 particles.push(new Particle());
             }
@@ -77,11 +77,11 @@ const NetworkBackground = () => {
                     const dx = mouse.x - p.x;
                     const dy = mouse.y - p.y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
-                    const maxDist = 150;
+                    const maxDist = 180; // Larger connection range
 
                     if (distance < maxDist) {
                         ctx.strokeStyle = `rgba(0, 220, 130, ${1 - distance / maxDist})`;
-                        ctx.lineWidth = 1;
+                        ctx.lineWidth = 1.5; // Thicker lines
                         ctx.beginPath();
                         ctx.moveTo(p.x, p.y);
                         ctx.lineTo(mouse.x, mouse.y);
@@ -95,11 +95,11 @@ const NetworkBackground = () => {
                     const dx = p.x - p2.x;
                     const dy = p.y - p2.y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
-                    const maxDist = 100;
+                    const maxDist = 120;
 
                     if (distance < maxDist) {
-                        ctx.strokeStyle = `rgba(0, 220, 130, ${0.1 * (1 - distance / maxDist)})`; // Very subtle
-                        ctx.lineWidth = 0.5;
+                        ctx.strokeStyle = `rgba(0, 220, 130, ${0.15 * (1 - distance / maxDist)})`; // Brighter connections
+                        ctx.lineWidth = 0.8;
                         ctx.beginPath();
                         ctx.moveTo(p.x, p.y);
                         ctx.lineTo(p2.x, p2.y);
@@ -123,7 +123,7 @@ const NetworkBackground = () => {
         <canvas
             ref={canvasRef}
             className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
-            style={{ opacity: 0.6 }} // Subtle blending
+            style={{ opacity: 0.9 }} // Higher visibility
         />
     );
 };
