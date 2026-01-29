@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Shield } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +11,7 @@ const Navbar = () => {
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
                         <Link to="/" className="flex-shrink-0 flex items-center gap-2">
-                            <Shield className="h-8 w-8 text-osint-accent" />
+                            <Globe className="h-8 w-8 text-osint-accent" />
                             <span className="font-bold text-xl tracking-tight text-white">
                                 OSINT<span className="text-osint-accent">Hub</span>
                             </span>
