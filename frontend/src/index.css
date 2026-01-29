@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-osint-dark: #000000;
-  --color-osint-card: #0a0a0a;
+  --color-osint-dark: #111116;
+  --color-osint-card: #1a1a20;
   --color-osint-accent: #00dc82;
   --color-osint-secondary: #3b82f6;
-  --color-osint-text: #e5e5e5;
-  --color-osint-muted: #737373;
+  --color-osint-text: #e2e8f0;
+  --color-osint-muted: #71717a;
 
   --font-mono: "Fira Code", monospace;
   --font-sans: "Inter", sans-serif;
@@ -14,8 +14,8 @@
 
 body {
   @apply bg-osint-dark text-osint-text font-sans antialiased;
-  background-image: linear-gradient(to right, #00dc8208 1px, transparent 1px), linear-gradient(to bottom, #00dc8208 1px, transparent 1px);
-  background-size: 40px 40px;
+  /* Metallic Gradient Base */
+  background-image: linear-gradient(135deg, #09090b 0%, #18181b 100%);
   background-attachment: fixed;
   min-height: 100vh;
 }
