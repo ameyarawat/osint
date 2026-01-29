@@ -43,7 +43,7 @@ const Home = () => {
                             <Link to="/tools" className="px-8 py-3 bg-osint-accent hover:bg-sky-600 text-white font-bold rounded-lg transition-all flex items-center gap-2 shadow-lg shadow-sky-500/20">
                                 Explore Directory <ArrowRight className="h-5 w-5" />
                             </Link>
-                            <Link to="/about" className="px-8 py-3 bg-osint-card/50 hover:bg-gray-800 text-white font-bold rounded-lg border border-gray-700 transition-all backdrop-blur-sm">
+                            <Link to="/about" className="px-8 py-3 bg-osint-card/30 hover:bg-gray-800/50 text-white font-bold rounded-lg transition-all backdrop-blur-sm">
                                 Learn OSINT
                             </Link>
                         </div>
@@ -56,7 +56,7 @@ const Home = () => {
                                 if (searchQuery.trim()) {
                                     navigate(`/tools?search=${encodeURIComponent(searchQuery)}`);
                                 }
-                            }} className="relative bg-black/80 backdrop-blur-md rounded-lg p-2 flex items-center border border-gray-800">
+                            }} className="relative bg-black/60 backdrop-blur-md rounded-lg p-2 flex items-center">
                                 <Search className="h-6 w-6 text-gray-400 ml-3" />
                                 <input
                                     type="text"
@@ -74,7 +74,7 @@ const Home = () => {
 
             {/* What is OSINT? */}
             <section className="py-20 relative">
-                <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent"></div>
+                <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent opacity-30"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
@@ -110,7 +110,7 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="bg-osint-card/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 relative overflow-hidden group hover:border-osint-accent/30 transition-colors">
+                        <div className="bg-osint-card/30 backdrop-blur-sm rounded-2xl p-8 relative overflow-hidden group hover:bg-osint-card/50 transition-colors">
                             <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-osint-accent/5 rounded-full blur-3xl group-hover:bg-osint-accent/10 transition-colors"></div>
                             <h3 className="text-2xl font-bold text-white mb-6">The Intelligence Cycle</h3>
                             <ul className="space-y-6 relative z-10">
@@ -122,7 +122,7 @@ const Home = () => {
                                     { title: 'Dissemination', desc: 'Presenting the findings in a clear, actionable report.' },
                                 ].map((step, idx) => (
                                     <li key={idx} className="flex items-center gap-4">
-                                        <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 text-osint-accent font-bold border border-gray-700">
+                                        <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800/50 text-osint-accent font-bold">
                                             {idx + 1}
                                         </div>
                                         <div>
@@ -138,7 +138,7 @@ const Home = () => {
             </section>
 
             {/* Categories Preview */}
-            <section className="py-20 bg-black/20">
+            <section className="py-20 bg-transparent">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
                         <Link to="/categories" className="inline-block group">
@@ -154,7 +154,7 @@ const Home = () => {
                             { name: 'Dark Web', icon: Lock, color: 'text-red-400' },
                             { name: 'Social Media', icon: Database, color: 'text-green-400' },
                         ].map((cat) => (
-                            <Link key={cat.name} to={`/tools?category=${encodeURIComponent(cat.name)}`} className="bg-osint-card/50 backdrop-blur-sm p-6 rounded-xl border border-gray-800 hover:border-osint-accent/50 hover:bg-gray-800/80 transition-all text-center group">
+                            <Link key={cat.name} to={`/tools?category=${encodeURIComponent(cat.name)}`} className="bg-osint-card/20 backdrop-blur-sm p-6 rounded-xl hover:bg-osint-card/40 transition-all text-center group">
                                 <cat.icon className={`h-10 w-10 mx-auto mb-4 ${cat.color} group-hover:scale-110 transition-transform`} />
                                 <h3 className="font-semibold text-white">{cat.name}</h3>
                             </Link>
