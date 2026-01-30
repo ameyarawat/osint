@@ -14,8 +14,8 @@ const Home = () => {
         const fetchTools = async () => {
             try {
                 const { data } = await api.get('/tools');
-                // Just take the first 3 for "featured"
-                setFeaturedTools(data.slice(0, 3));
+                // Take first 10 for marquee
+                setFeaturedTools(data.slice(0, 10));
             } catch (error) {
                 console.error('Error fetching tools', error);
             } finally {
@@ -162,8 +162,8 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Featured Tools */}
-            <section className="py-20">
+            {/* Featured Tools Marquee */}
+            <section className="py-20 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center mb-12">
                         <h2 className="text-3xl font-bold text-white">Featured Tools</h2>
@@ -171,17 +171,22 @@ const Home = () => {
                             View All <ArrowRight className="h-4 w-4" />
                         </Link>
                     </div>
+                </div>
 
-                    {loading ? (
-                        <div className="text-center text-gray-500">Loading tools...</div>
-                    ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {featuredTools.map((tool) => (
-                                <ToolCard key={tool._id} tool={tool} />
+                {loading ? (
+                    <div className="text-center text-gray-500">Loading tools...</div>
+                ) : (
+                    <div className="relative w-full">
+                        <div className="flex animate-marquee-reverse hover:pause gap-8 w-max">
+                            {/* Duplicate list to create infinite loop */}
+                            {[...featuredTools, ...featuredTools].map((tool, idx) => (
+                                <div key={`${tool._id}-${idx}`} className="w-[300px] md:w-[350px] flex-shrink-0">
+                                    <ToolCard tool={tool} />
+                                </div>
                             ))}
                         </div>
-                    )}
-                </div>
+                    </div>
+                )}
             </section>
         </div>
     );
