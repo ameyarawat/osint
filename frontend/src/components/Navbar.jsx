@@ -1,9 +1,35 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X, Radar } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, Radar, Search } from 'lucide-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [showSearch, setShowSearch] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (location.pathname === '/') {
+                setShowSearch(window.scrollY > 400);
+            } else {
+                setShowSearch(true);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [location.pathname]);
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        if (searchQuery.trim()) {
+            navigate(`/tools?search=${encodeURIComponent(searchQuery)}`);
+            setSearchQuery('');
+        }
+    };
 
     return (
         <nav className="bg-osint-card border-b border-gray-800 sticky top-0 z-50">
@@ -32,6 +58,19 @@ const Navbar = () => {
                                 </Link>
                             </div>
                         </div>
+                    </div>
+
+                    <div className={`hidden md:flex items-center transition-all duration-500 transform ${showSearch ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10 pointer-events-none'}`}>
+                        <form onSubmit={handleSearch} className="relative">
+                            <input
+                                type="text"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                placeholder="Search tools..."
+                                className="bg-gray-900/50 text-sm text-white border border-gray-700 rounded-full pl-10 pr-4 py-1.5 focus:outline-none focus:border-osint-accent focus:ring-1 focus:ring-osint-accent w-64 transition-all"
+                            />
+                            <Search className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                        </form>
                     </div>
 
                     <div className="-mr-2 flex md:hidden">
