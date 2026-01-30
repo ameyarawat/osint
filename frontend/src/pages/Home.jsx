@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, Search, Database, Globe, Users, Lock } from 'lucide-react';
 import api from '../api';
 import ToolCard from '../components/ToolCard';
+import ScrollReveal from '../components/ScrollReveal';
 
 const Home = () => {
     const [featuredTools, setFeaturedTools] = useState([]);
@@ -25,8 +26,6 @@ const Home = () => {
 
         fetchTools();
     }, []);
-
-    import ScrollReveal from '../components/ScrollReveal';
 
     // ... (inside Home component)
 
