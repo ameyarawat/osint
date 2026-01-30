@@ -176,8 +176,8 @@ const Home = () => {
                 {loading ? (
                     <div className="text-center text-gray-500">Loading tools...</div>
                 ) : (
-                    <div className="relative w-full">
-                        <div className="flex animate-marquee-reverse hover:pause gap-8 w-max">
+                    <div className="relative w-full [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+                        <div className="flex animate-marquee-reverse hover:pause gap-8 w-max px-4">
                             {/* Duplicate list to create infinite loop */}
                             {[...featuredTools, ...featuredTools].map((tool, idx) => (
                                 <div key={`${tool._id}-${idx}`} className="w-[300px] md:w-[350px] flex-shrink-0">
