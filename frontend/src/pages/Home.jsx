@@ -180,7 +180,7 @@ const Home = () => {
                         <div className="flex animate-marquee-reverse hover:pause gap-8 w-max px-4">
                             {/* Duplicate list to create infinite loop */}
                             {[...featuredTools, ...featuredTools].map((tool, idx) => (
-                                <div key={`${tool._id}-${idx}`} className="w-[300px] md:w-[350px] flex-shrink-0">
+                                <div key={`${tool._id}-${idx}`} className="w-[260px] md:w-[300px] flex-shrink-0">
                                     <ToolCard tool={tool} />
                                 </div>
                             ))}
