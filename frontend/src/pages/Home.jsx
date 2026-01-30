@@ -36,11 +36,11 @@ const Home = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 relative z-10">
                     <ScrollReveal>
                         <div className="text-center">
-                            <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-6">
+                            <h1 className="text-5xl sm:text-7xl font-extrabold text-white tracking-tight mb-8">
                                 Master the Art of <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-osint-secondary to-osint-accent">Open Source Intelligence</span>
                             </h1>
-                            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
+                            <p className="mt-6 max-w-3xl mx-auto text-2xl text-gray-400">
                                 The ultimate directory for ethical OSINT tools. detailed guides, verified links, and categorized resources for cybersecurity professionals.
                             </p>
                             <div className="mt-10 flex justify-center gap-4">
