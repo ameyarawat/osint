@@ -42,7 +42,7 @@ const ToolCard = ({ tool }) => {
                 </div>
             </div>
 
-            <div className="bg-gray-900/50 px-6 py-4 border-t border-gray-800 flex justify-between items-center">
+            <div className="bg-gray-900 px-6 py-4 border-t border-gray-800 flex justify-between items-center">
                 <Link
                     to={`/tools/${tool._id}`}
                     className="text-osint-accent hover:text-white text-sm font-medium transition-colors"
