@@ -12,14 +12,23 @@ const Navbar = () => {
     useEffect(() => {
         const handleScroll = () => {
             if (location.pathname === '/') {
-                setShowSearch(window.scrollY > 400);
+                const heroSearch = document.getElementById('hero-search-container');
+                if (heroSearch) {
+                    const rect = heroSearch.getBoundingClientRect();
+                    // Show navbar search when hero search scrolls behind/past the navbar (64px height)
+                    setShowSearch(rect.bottom < 64);
+                } else {
+                    setShowSearch(window.scrollY > 400);
+                }
             } else {
                 setShowSearch(true);
             }
         };
 
         window.addEventListener('scroll', handleScroll);
-        handleScroll();
+        // Initial check
+        setTimeout(handleScroll, 100); // Small delay to ensure DOM is ready on mount
+
         return () => window.removeEventListener('scroll', handleScroll);
     }, [location.pathname]);
 

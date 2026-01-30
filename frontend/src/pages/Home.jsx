@@ -53,7 +53,7 @@ const Home = () => {
                             </div>
 
                             {/* Search Bar */}
-                            <div className="mt-12 max-w-xl mx-auto relative group transition-transform duration-300 hover:scale-105">
+                            <div id="hero-search-container" className="mt-12 max-w-xl mx-auto relative group transition-transform duration-300 hover:scale-105">
                                 <div className="absolute -inset-1 bg-gradient-to-r from-osint-secondary to-osint-accent rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                                 <form onSubmit={(e) => {
                                     e.preventDefault();
