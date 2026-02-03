@@ -21,7 +21,7 @@ const Navbar = () => {
                     setShowSearch(window.scrollY > 400);
                 }
             } else {
-                setShowSearch(true);
+                setShowSearch(false);
             }
         };
 
