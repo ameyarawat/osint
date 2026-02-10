@@ -3,6 +3,7 @@ import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import NetworkBackground from './components/NetworkBackground';
+import SuggestionWidget from './components/SuggestionWidget';
 import Home from './pages/Home';
 import Tools from './pages/Tools';
 import ToolDetail from './pages/ToolDetail';
@@ -25,11 +26,13 @@ function App() {
               <Route path="/about" element={<About />} />
               {/* Authentication routes removed as per user request */}
             </Routes>
+
           </main>
+          <SuggestionWidget />
           <Footer />
         </div>
       </AuthProvider>
-    </Router>
+    </Router >
   );
 }
 

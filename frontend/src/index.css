@@ -7,6 +7,9 @@
   --color-osint-secondary: #3b82f6;
   --color-osint-text: #e2e8f0;
   --color-osint-muted: #71717a;
+  --color-osint-text-muted: #a1a1aa;
+  --color-osint-border: #27272a;
+  --color-osint-bg: #09090b;
 
   --font-mono: "Fira Code", monospace;
   --font-sans: "Inter", sans-serif;

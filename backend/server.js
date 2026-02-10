@@ -20,6 +20,7 @@ app.use(cors());
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/tools', require('./routes/toolRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/suggestions', require('./routes/suggestionRoutes'));
 
 app.use(require('./middleware/errorMiddleware').errorHandler);
 
