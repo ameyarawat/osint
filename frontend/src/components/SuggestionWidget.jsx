@@ -1,9 +1,7 @@
-import { useState } from 'react';
+import { useState } from 'react'; // React import
 import { MessageSquarePlus, X, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { api } from '../api'; // Assuming api.js exports an axios instance as 'api' or similar. 
-// If api.js is not set up that way, I'll fallback to standard fetch or check api.js content first.
-// Let me check api.js content in the next step to be sure, but for now I'll write standard fetch to be safe and independent.
+import api from '../api'; // Correct import for default export
 
 const SuggestionWidget = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,19 +17,7 @@ const SuggestionWidget = () => {
         setErrorMessage('');
 
         try {
-            const response = await fetch('http://localhost:5000/api/suggestions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ suggestion }),
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.message || 'Failed to submit');
-            }
+            await api.post('/suggestions', { suggestion });
 
             setStatus('success');
             setSuggestion('');
@@ -41,7 +27,8 @@ const SuggestionWidget = () => {
             }, 2000);
         } catch (error) {
             console.error(error);
-            setErrorMessage(error.message);
+            const message = error.response?.data?.message || error.message || 'Failed to submit';
+            setErrorMessage(message);
             setStatus('error');
             setTimeout(() => {
                 setStatus('idle');
