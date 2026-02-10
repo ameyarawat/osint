@@ -8,13 +8,16 @@ import { api } from '../api'; // Assuming api.js exports an axios instance as 'a
 const SuggestionWidget = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [suggestion, setSuggestion] = useState('');
-    const [status, setStatus] = useState('idle'); // idle, submitting, success, error
+
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!suggestion.trim()) return;
 
         setStatus('submitting');
+        setErrorMessage('');
+
         try {
             const response = await fetch('http://localhost:5000/api/suggestions', {
                 method: 'POST',
@@ -24,7 +27,11 @@ const SuggestionWidget = () => {
                 body: JSON.stringify({ suggestion }),
             });
 
-            if (!response.ok) throw new Error('Failed to submit');
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Failed to submit');
+            }
 
             setStatus('success');
             setSuggestion('');
@@ -34,8 +41,12 @@ const SuggestionWidget = () => {
             }, 2000);
         } catch (error) {
             console.error(error);
+            setErrorMessage(error.message);
             setStatus('error');
-            setTimeout(() => setStatus('idle'), 3000);
+            setTimeout(() => {
+                setStatus('idle');
+                setErrorMessage('');
+            }, 4000);
         }
     };
 
@@ -87,7 +98,7 @@ const SuggestionWidget = () => {
                                         )}
                                     </button>
                                     {status === 'error' && (
-                                        <p className="text-xs text-red-500 mt-2 text-center">Failed to send. Try again.</p>
+                                        <p className="text-xs text-red-500 mt-2 text-center px-1 font-medium">{errorMessage}</p>
                                     )}
                                 </form>
                             )}
