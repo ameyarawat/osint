@@ -31,7 +31,7 @@ const ToolForm = () => {
     const [useCaseInput, setUseCaseInput] = useState('');
     const [tagInput, setTagInput] = useState('');
 
-    const categories = ['People OSINT', 'Domain OSINT', 'Social Media', 'Image Analysis', 'Dark Web', 'Relationship Analysis', 'IoT Search Engine', 'Data Leaks', 'Geospatial', 'Search Engines'];
+    const categories = ['People OSINT', 'Domain OSINT', 'Social Media', 'Image Analysis', 'Dark Web', 'Relationship Analysis', 'IoT Search Engine', 'Data Leaks OSINT', 'Geospatial', 'Search Engines'];
     const platforms = ['Windows', 'Linux', 'macOS', 'Web'];
     const licenses = ['Free', 'Paid', 'Freemium'];
 

@@ -22,7 +22,7 @@ const Tools = () => {
         license: false
     });
 
-    const categories = ['People OSINT', 'Domain OSINT', 'Social Media', 'Image Analysis', 'Maritime OSINT', 'Aviation OSINT', 'Vehicle OSINT', 'Radar OSINT', 'Geospatial', 'Dark Web', 'Relationship Analysis', 'IoT Search Engine', 'Data Leaks'];
+    const categories = ['People OSINT', 'Domain OSINT', 'Social Media', 'Image Analysis', 'Maritime OSINT', 'Aviation OSINT', 'Vehicle OSINT', 'Radar OSINT', 'Geospatial', 'Dark Web', 'Relationship Analysis', 'IoT Search Engine', 'Data Leaks OSINT'];
     const platforms = ['Windows', 'Linux', 'macOS', 'Web'];
     const licenses = ['Free', 'Paid', 'Freemium'];
 

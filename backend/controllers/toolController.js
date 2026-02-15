@@ -10,7 +10,7 @@ const getTools = async (req, res) => {
         let query = {};
 
         if (category) {
-            query.category = category;
+            query.category = category === 'Data Leaks' ? 'Data Leaks OSINT' : category;
         }
 
         if (platform) {

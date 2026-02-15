@@ -12,7 +12,7 @@ const Categories = () => {
         { name: 'Vehicle OSINT', icon: Car, desc: 'VIN checks, license plate lookup, and owner history.', color: 'text-red-500' },
         { name: 'Radar OSINT', icon: Wind, desc: 'Weather radar, environmental monitoring, and signals.', color: 'text-teal-400' },
         { name: 'Dark Web', icon: Lock, desc: 'Monitor Tor hidden services and deep web marketplaces safely.', color: 'text-red-400' },
-        { name: 'Data Leaks', icon: Database, desc: 'Search through breached databases and credential dumps.', color: 'text-green-400' },
+        { name: 'Data Leaks OSINT', icon: Database, desc: 'Search through breached databases and credential dumps.', color: 'text-green-400' },
         { name: 'Geospatial', icon: Map, desc: 'Geolocation tools, satellite imagery analysis, and map reconnaissance.', color: 'text-orange-400' },
         { name: 'Search Engines', icon: Search, desc: 'Specialized search engines for IoT, code, and documents.', color: 'text-cyan-400' },
     ];

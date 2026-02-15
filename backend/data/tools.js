@@ -123,7 +123,7 @@ const tools = [
     },
     {
         tool_name: 'Have I Been Pwned',
-        category: 'People OSINT',
+        category: 'Data Leaks OSINT',
         description: 'Have I Been Pwned allows you to check if your email address or phone number has been in a data breach.',
         short_description: 'Check for data breaches.',
         features: ['Breach Search', 'Password Search', 'Domain Search'],
