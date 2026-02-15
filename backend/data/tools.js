@@ -173,6 +173,19 @@ const tools = [
         license_type: 'Freemium',
         tags: ['search', 'archive', 'darknet']
     },
+    {
+        tool_name: 'Snusbase',
+        category: 'Data Leaks OSINT',
+        description: 'Snusbase is a data breach search engine that allows you to search for compromised emails, usernames, names, IP addresses, and more.',
+        short_description: 'Data breach search engine.',
+        features: ['Credential Search', 'API Access', 'Dark Web Data'],
+        use_cases: ['Credential Verification', 'Threat Intelligence'],
+        official_website: 'https://snusbase.com/',
+        download_link: 'https://snusbase.com/',
+        platform_supported: ['Web'],
+        license_type: 'Paid',
+        tags: ['breach', 'search', 'credentials']
+    },
 
     {
         tool_name: 'EPIOS',
