@@ -134,6 +134,19 @@ const tools = [
         license_type: 'Free',
         tags: ['email', 'breach', 'security']
     },
+    {
+        tool_name: 'DeHashed',
+        category: 'Data Leaks OSINT',
+        description: 'DeHashed is one of the largest and fastest data breach search engines. It allows you to search for compromised assets (emails, domains, IPs, etc.) across breached databases.',
+        short_description: 'Search engine for breached data assets.',
+        features: ['Breach Search', 'Asset Monitoring', 'API Access'],
+        use_cases: ['Credential Verification', 'Threat Intelligence'],
+        official_website: 'https://dehashed.com/',
+        download_link: 'https://dehashed.com/',
+        platform_supported: ['Web'],
+        license_type: 'Freemium',
+        tags: ['breach', 'search', 'credentials']
+    },
 
     {
         tool_name: 'EPIOS',
