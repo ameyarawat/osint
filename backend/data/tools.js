@@ -186,6 +186,19 @@ const tools = [
         license_type: 'Paid',
         tags: ['breach', 'search', 'credentials']
     },
+    {
+        tool_name: 'BreachDirectory',
+        category: 'Data Leaks OSINT',
+        description: 'BreachDirectory allows you to search through billions of breached records to check if your data has been compromised.',
+        short_description: 'Large-scale data breach search engine.',
+        features: ['Breach Search', 'Password Hash Lookup', 'API Access'],
+        use_cases: ['Credential Verification', 'Security Audits'],
+        official_website: 'https://breachdirectory.org/',
+        download_link: 'https://breachdirectory.org/',
+        platform_supported: ['Web'],
+        license_type: 'Freemium',
+        tags: ['breach', 'search', 'directory']
+    },
 
     {
         tool_name: 'EPIOS',
