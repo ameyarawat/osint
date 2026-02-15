@@ -199,6 +199,19 @@ const tools = [
         license_type: 'Freemium',
         tags: ['breach', 'search', 'directory']
     },
+    {
+        tool_name: 'Scylla.sh',
+        category: 'Data Leaks OSINT',
+        description: 'Scylla.sh is a comprehensive data breach search engine that aggregates data from various leaks and breaches, providing an API for easy access.',
+        short_description: 'Aggregates data from various leaks and breaches.',
+        features: ['Breach Search', 'API Access', 'Multi-Database Query'],
+        use_cases: ['Credential Verification', 'Security Research'],
+        official_website: 'https://scylla.sh/',
+        download_link: 'https://scylla.sh/',
+        platform_supported: ['Web', 'API'],
+        license_type: 'Free',
+        tags: ['breach', 'search', 'api']
+    },
 
     {
         tool_name: 'EPIOS',
