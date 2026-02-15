@@ -250,9 +250,22 @@ const tools = [
         use_cases: ['Reconnaissance', 'Penetration Testing'],
         official_website: 'https://github.com/laramies/theHarvester',
         download_link: 'https://github.com/laramies/theHarvester',
-        platform_supported: ['Linux', 'macOS'],
+        platform_supported: ['Windows', 'Linux', 'macOS'],
         license_type: 'Free',
-        tags: ['recon', 'email', 'domain']
+        tags: ['harvesting', 'email', 'domain']
+    },
+    {
+        tool_name: 'Hunter.io',
+        category: 'Domain OSINT',
+        description: 'Hunter is the leading solution to find and verify professional email addresses. It allows you to find email addresses for any domain.',
+        short_description: 'Find email addresses for any domain.',
+        features: ['Domain Search', 'Email Finder', 'Email Verifier'],
+        use_cases: ['Lead Generation', 'Recruitment', 'Sales Prospecting'],
+        official_website: 'https://hunter.io/',
+        download_link: 'https://hunter.io/',
+        platform_supported: ['Web', 'Chrome Extension'],
+        license_type: 'Freemium',
+        tags: ['email', 'domain', 'verification']
     },
     {
         tool_name: 'Sublist3r',
