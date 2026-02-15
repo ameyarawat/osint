@@ -8,13 +8,16 @@ import AuthContext from '../context/AuthContext';
 const Tools = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const initialSearch = searchParams.get('search') || '';
+    const initialCategory = searchParams.get('category') || '';
+    const initialPlatform = searchParams.get('platform') || '';
+    const initialLicense = searchParams.get('license') || '';
 
     const [tools, setTools] = useState([]);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState(initialSearch);
-    const [selectedCategory, setSelectedCategory] = useState('');
-    const [selectedPlatform, setSelectedPlatform] = useState('');
-    const [selectedLicense, setSelectedLicense] = useState('');
+    const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+    const [selectedPlatform, setSelectedPlatform] = useState(initialPlatform);
+    const [selectedLicense, setSelectedLicense] = useState(initialLicense);
 
     const [openSections, setOpenSections] = useState({
         category: false,
