@@ -122,6 +122,19 @@ const tools = [
         tags: ['username', 'report', 'python']
     },
     {
+        tool_name: 'WhatsMyName',
+        category: 'People OSINT',
+        description: 'WhatsMyName allows you to enumerate usernames across many websites. It helps you find where a specific username is registered.',
+        short_description: 'Enumerate usernames across many websites.',
+        features: ['Username Enumeration', 'Fast Search', 'Cross-Platform'],
+        use_cases: ['Person Investigation', 'Digital Footprint Analysis'],
+        official_website: 'https://whatsmyname.app/',
+        download_link: 'https://github.com/WebBreacher/WhatsMyName',
+        platform_supported: ['Web'],
+        license_type: 'Free',
+        tags: ['username', 'enumeration', 'search']
+    },
+    {
         tool_name: 'Have I Been Pwned',
         category: 'Data Leaks OSINT',
         description: 'Have I Been Pwned allows you to check if your email address or phone number has been in a data breach.',
