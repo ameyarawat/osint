@@ -21,36 +21,6 @@ A centralized platform for managing and exploring Open Source Intelligence (OSIN
 - **Database**: MongoDB (Mongoose)
 - **Auth**: JWT (JSON Web Tokens)
 
-## 📦 Installation
-
-### Prerequisites
-- Node.js (v14+)
-- MongoDB (Local or Atlas)
-
-### 1. Backend Setup
-```bash
-cd backend
-npm install
-npm run data:import  # Seed database with sample tools & admin
-npm run server       # Start backend on port 5000
-```
-
-### 2. Frontend Setup
-```bash
-cd frontend
-npm install
-npm run dev          # Start frontend on port 5173
-```
-
-## 🔐 Environment Variables
-
-### Backend (`backend/.env`)
-```env
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/osint_tool_manager(default)
-JWT_SECRET=your_jwt_secret
-NODE_ENV=development
-```
 
 ## 📚 Documentation
 
