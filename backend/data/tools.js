@@ -160,6 +160,19 @@ const tools = [
         license_type: 'Freemium',
         tags: ['breach', 'search', 'credentials']
     },
+    {
+        tool_name: 'IntelligenceX',
+        category: 'Data Leaks OSINT',
+        description: 'Intelligence X is a search engine and data archive. It searches Tor, I2P, data leaks, domains, emails, and the public web.',
+        short_description: 'Search engine for darknet and data leaks.',
+        features: ['Darknet Search', 'Data Archive', 'Email Search'],
+        use_cases: ['Threat Intelligence', 'Data Leak Investigation'],
+        official_website: 'https://intelx.io/',
+        download_link: 'https://intelx.io/',
+        platform_supported: ['Web'],
+        license_type: 'Freemium',
+        tags: ['search', 'archive', 'darknet']
+    },
 
     {
         tool_name: 'EPIOS',
