@@ -110,7 +110,7 @@ const Tools = () => {
 
                 <div className="flex flex-col lg:flex-row gap-8">
                     {/* Filters Sidebar */}
-                    <aside className="lg:w-1/4 space-y-6">
+                    <aside className="lg:w-1/4 space-y-6 sticky top-24 self-start">
                         <div className="bg-osint-card p-6 rounded-lg border border-gray-800">
                             <div className="flex justify-between items-center mb-4">
                                 <h3 className="font-semibold text-white flex items-center gap-2">
