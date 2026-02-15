@@ -147,6 +147,19 @@ const tools = [
         license_type: 'Freemium',
         tags: ['breach', 'search', 'credentials']
     },
+    {
+        tool_name: 'LeakCheck',
+        category: 'Data Leaks OSINT',
+        description: 'LeakCheck is a data breach search engine that allows you to search for compromised emails and usernames across thousands of databases.',
+        short_description: 'Search for compromised emails and usernames.',
+        features: ['Email Search', 'Username Search', 'API Access'],
+        use_cases: ['Credential Verification', 'Security Assessment'],
+        official_website: 'https://leakcheck.io/',
+        download_link: 'https://leakcheck.io/',
+        platform_supported: ['Web'],
+        license_type: 'Freemium',
+        tags: ['breach', 'search', 'credentials']
+    },
 
     {
         tool_name: 'EPIOS',
